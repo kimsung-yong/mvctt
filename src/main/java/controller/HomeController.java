@@ -19,13 +19,13 @@ public class HomeController {
     BoardService boardService;
 
     @RequestMapping("/")
-    public ModelAndView home(BoardVO vo, Criteria cri){
+    public ModelAndView home(Criteria cri){
 
         List<BoardVO> list = null;
         ModelAndView mv = new ModelAndView();
         int total = boardService.readTotal();
         if(total >= 1 ){
-            list = this.boardService.read(vo);
+            list = this.boardService.read(cri);
         }
         mv.setViewName("index");
         String data = "확인 합니다";

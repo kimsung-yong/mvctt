@@ -1,12 +1,13 @@
 package service;
 
+import domain.Criteria;
 import domain.board.BoardVO;
 
 import java.util.List;
 
 public interface BoardService {
 
-    public List<BoardVO> read(BoardVO vo);
+    public List<BoardVO> read(Criteria cri);
 
     public BoardVO readInfo(BoardVO vo);
 

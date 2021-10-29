@@ -1,5 +1,6 @@
 package service.serviceimp;
 
+import domain.Criteria;
 import lombok.Setter;
 import mapper.BoardMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,8 @@ public class BoardSerivceImp implements BoardService {
 
     @Transactional
     @Override
-    public List<BoardVO> read(BoardVO vo) {
-        return boardMapper.selectBoardList(vo);
+    public List<BoardVO> read(Criteria cri) {
+        return boardMapper.selectBoardList(cri);
     }
 
     @Override
