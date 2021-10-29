@@ -34,4 +34,13 @@ public class HomeController {
         mv.addObject("list",list);
         return mv;
     }
+    @RequestMapping("/get")
+    public ModelAndView get(BoardVO vo){
+        ModelAndView mv = new ModelAndView();
+
+        mv.addObject("vo",boardService.readInfo(vo));
+        mv.setViewName("detail");
+        return mv;
+
+    }
 }

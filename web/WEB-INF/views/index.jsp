@@ -8,19 +8,16 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html>
-<head>
+<head profile="http://www.w3.org/2005/10/profile" >
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
     <title>Title</title>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js">
-        $(document).ready(function () {
-            /* var action = $("#action");
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-             $("#detailPage").click(function () {
-                 alert("성공?");
-             });*/
-            alert("제이쿼리 동작확인");
-            console.log("제이쿼리 동작확인");
-        });
-    </script>
+
+
+    <%--<script type="text/javascript">
+        alert("test");
+    </script>--%>
 </head>
 <body>
     <table width="1000" border="1" align="center" >
@@ -30,22 +27,32 @@
             <td width="10%">조회수</td>
         </tr>
 
-        <form id="action" action="/get" method="post">
+        <form id="action" action="" method="post">
             <input type="hidden" name="name" value="">
             <input type="hidden" name="title" value="">
             <input type="hidden" name="contents" value="">
-            <input type="submit">
         </form>
             <c:forEach items="${list}" var="row">
                 <tr align="center">
                     <td><c:out value="${row.name}"/> </td>
-                    <td><a id="detailPage" href=""><c:out value="${row.title}" /></a> </td>
+                    <td><a id="detailPage" href="<c:out value="${row.idx}"/>"><c:out value="${row.title}" /></a> </td>
                     <td><c:out value="${row.contents}"/></td>
                 </tr>
             </c:forEach>
 
     </table>
 
+    <script>
+        $(document).ready(function () {
+            var action = $("#action");
 
+            $("a#detailPage").click(function (e) {
+                e.preventDefault();
+                action.attr("action","/get");
+                action.append("<input type = 'hidden' name='idx' value='" + $(this).attr("href") + "'>");
+                action.submit();
+            });
+        });
+    </script>
 </body>
 </html>
