@@ -1,6 +1,6 @@
 package mapper;
 
-import vo.BoardVO;
+import domain.board.BoardVO;
 
 import java.util.List;
 

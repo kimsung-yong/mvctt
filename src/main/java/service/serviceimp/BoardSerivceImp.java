@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import service.BoardService;
-import vo.BoardVO;
+import domain.board.BoardVO;
 
 import java.util.List;
 

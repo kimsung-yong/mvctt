@@ -36,7 +36,7 @@
                 <tr align="center">
                     <td><c:out value="${row.name}"/> </td>
                     <td><a id="detailPage" href="<c:out value="${row.idx}"/>"><c:out value="${row.title}" /></a> </td>
-                    <td><c:out value="${row.contents}"/></td>
+                    <td><c:out value="${row.acount}"/></td>
                 </tr>
             </c:forEach>
 

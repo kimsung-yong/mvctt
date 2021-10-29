@@ -14,13 +14,13 @@
         ]]>
     </select>
 
-    <select id="selectBoardList" resultType="vo.BoardVO">
+    <select id="selectBoardList" resultType="domain.board.BoardVO">
         <![CDATA[
         select * from board where idx > 0
         ]]>
     </select>
 
-    <select id="selectBoardInfo" resultType="vo.BoardVO">
+    <select id="selectBoardInfo" resultType="domain.board.BoardVO">
         <![CDATA[
         select * from board where idx = ${idx}
         ]]>

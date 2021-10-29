@@ -1,6 +1,6 @@
 package service;
 
-import vo.BoardVO;
+import domain.board.BoardVO;
 
 import java.util.List;
 
