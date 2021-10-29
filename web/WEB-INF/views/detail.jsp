@@ -10,9 +10,12 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        textarea{width:100%; height: 100%;}
+
+    </style>
 </head>
 <body>
-
         <table border="1" width="1000px" align="center" height="500px">
             <tr height="20%">
                 <td>작성자</td>
@@ -24,12 +27,13 @@
             </tr>
             <tr height="50%">
                 <td>내용</td>
-                <td><textarea><c:out value="${vo.contents}"/> </textarea></td>
+                <td><textarea style="resize: none;"><c:out value="${vo.contents}"/> </textarea></td>
             </tr>
             <tr height="10%">
                 <td>조회수</td>
                 <td><c:out value="${vo.acount}"/></td>
             </tr>
         </table>
+        
 </body>
 </html>

@@ -1,5 +1,6 @@
 package controller;
 
+import domain.Criteria;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,7 @@ public class HomeController {
     BoardService boardService;
 
     @RequestMapping("/")
-    public ModelAndView home(BoardVO vo){
+    public ModelAndView home(BoardVO vo, Criteria cri){
 
         List<BoardVO> list = null;
         ModelAndView mv = new ModelAndView();
